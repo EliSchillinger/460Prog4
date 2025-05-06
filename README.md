@@ -9,7 +9,7 @@ Date: May 6, 2025
     - To run the program first cd into the 'Queries' directory and then run 'javac *', then in the 'Prog4' directory run 'javac Prog4.java' and then 'java Prog4 <username> <password>'
 
 ## Contributions:
-    Eli: Responsible for ERD draft, project/GH repo set up, SQL scripts, UI, data manipulation (insertion, deletion)
+    Eli: Responsible for ERD draft, project/GH repo set up, SQL scripts, UI, data manipulation (insertion, deletion, and update)
 
     Parker: Responsible for JDBC connection, first 3 SQL queries
 
