@@ -47,15 +47,16 @@ public class InstructorLessons{
 			else {
 				System.out.println("Invalid format. Please use YYYY-MM-DD.");
 			}
-	
+        }
+        
 		String sql =
 			"SELECT E.empID, E.name AS instructorName, "
             + "COUNT(DISTINCT LL.orderID) AS totalStudents "
             + "FROM EMPLOYEE E "
             + "JOIN LESSON L ON E.empID = L.empID "
             + "JOIN LESSON_LOG LL ON L.lessonID = LL.lessonID "
-            + "WHERE L.date = :lessonDate "
-            + "GROUP BY E.empID, E.name; ";
+            + "WHERE L.\"date\" = ? "
+            + "GROUP BY E.empID, E.name";
 	
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setDate(1, Date.valueOf(lessonDate));
