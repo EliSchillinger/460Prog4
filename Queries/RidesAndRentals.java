@@ -3,7 +3,35 @@ package Queries;
 import java.sql.*;
 import java.util.Scanner;
 
+/*
+* File: RidesAndRentals.java
+* 
+* This class contains a method which executes the following query:
+* 	QUERY: For a given ski pass, list all lift rides 
+*   and equipment rentals associated with it, along with timestamps
+*   and return status.
+* 
+* USES: LIFT_LOG, LIFT tables
+*/
+
 public class RidesAndRentals {
+    /**
+     * Purpose:
+     * Executes a parameterized SQL query 
+     *
+     * Preconditions:
+     * - A valid JDBC Connection object (conn) is established
+     * - A Scanner object (scanner) must be passed
+     * - The LIFT_LOG and LIFT tables must be populated and created.
+     *
+     * Postconditions:
+     * - Executes a SQL query with a user-supplied ski pass number.
+     * - Outputs the results to the console.
+     * - Displays a message if no records are found.
+     *
+     * @param conn    The active JDBC connection to the database.
+     * @param scanner A Scanner object for reading input from the user.
+    */
 	public static void ridesAndRentals(Connection conn, Scanner scanner) {
         System.out.print("Enter ski pass number: ");
         String passNo = scanner.nextLine().trim();

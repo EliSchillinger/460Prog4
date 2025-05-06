@@ -8,6 +8,14 @@ import Queries.RidesAndRentals;
 import Queries.SkiLessons;
 import Queries.InstructorLessons; // Added from Program 1 analysis
 
+/*
+* File: Prog4.java
+* 
+* Purpose: Establishes an Oracle JDBC connection and provides a text-based 
+*          user-interface for interacting with a ski-resort database. Provides input handling.
+* 
+*/
+
 public class Prog4 {
 	//Oracle connection details
 	// Magic lectura -> aloe access spell

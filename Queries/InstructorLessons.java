@@ -4,18 +4,49 @@ import java.sql.*;
 import java.util.Scanner;
 
 /*
-QUERY: For a date entered by the user, 
-show all instructors who had scheduled lessons 
-and how many students each taught.
-
-USES: EMPLOYEE, LESSON, LESSON_LOG
+* File: InstructorLessons.java
+* 
+* This class contains a method which executes the following query:
+* 	QUERY: For a date entered by the user, 
+* 	show all instructors who had scheduled lessons 
+* 	and how many students each taught.
+* 
+* USES: EMPLOYEE, LESSON, LESSON_LOG tables.
 */
 
 public class InstructorLessons{
-	public static void instructorLessons(Connection conn, Scanner scanner) {
-		System.out.print("Enter lesson date (YYYY-MM-DD):");
+	
+    /**
+     * Purpose:
+     * Executes a parameterized SQL query 
+     *
+     * Preconditions:
+     * - A valid JDBC Connection object (conn) is established
+     * - A Scanner object (scanner) must be passed
+     * - The EMPLOYEE, LESSON, and LESSON_LOG tables must be populated and created.
+     *
+     * Postconditions:
+     * - Executes a SQL query with a user-supplied date.
+     * - Outputs the results to the console.
+     * - Displays a message if no records are found.
+     *
+     * @param conn    The active JDBC connection to the database.
+     * @param scanner A Scanner object for reading input from the user.
+     */
 
-		String lessonDate = scanner.nextLine();
+	public static void instructorLessons(Connection conn, Scanner scanner) {
+		String lessonDate;
+		
+		while (true){
+			System.out.print("Enter lesson date (YYYY-MM-DD):");
+			lessonDate = scanner.nextLine();
+
+			if (lessonDate.matches("\\d{4}-\\d{2}-\\d{2}")) {
+				break;
+			}
+			else {
+				System.out.println("Invalid format. Please use YYYY-MM-DD.");
+			}
 	
 		String sql =
 			"SELECT E.empID, E.name AS instructorName, "

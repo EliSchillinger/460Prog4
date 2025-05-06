@@ -9,8 +9,33 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+/*
+* File: RecordManipulation.java
+* 
+* Purpose: Provides methods for performing basis create, update and delete
+* 		   operations on a SQL database table.
+*
+*/
+
 public class RecordManipulation {
 
+	/**
+     * Inserts a new record into the specified table using the provided attribute values.
+     * 
+     * @param conn        A valid database connection
+     * @param tableName   Name of the table into which the record will be inserted
+     * @param attributes  A list of attribute values to be inserted in order
+     * 
+     * Preconditions:
+     * - conn is not null
+     * - tableName is a valid non-empty string corresponding to a real table
+     * - attributes is not null or empty
+     * 
+     * Postconditions:
+     * - A new row is inserted if no SQL errors occur
+     * 
+     * @return A message indicating whether the insertion was successful
+     */
 	public static String insert(Connection conn, String tableName, List<String> attributes) {
 		if (attributes == null || attributes.isEmpty()) {
 			return "Error: No values provided for insertion.";
@@ -43,6 +68,22 @@ public class RecordManipulation {
         }
 	}
 
+	/**
+     * Deletes records from a specified table that match a given condition
+     * 
+     * @param conn       A valid database connection
+     * @param tableName  Name of the table from which records will be deleted
+     * @param condition  SQL WHERE clause condition string (without "WHERE")
+     * 
+     * Preconditions:
+     * - conn is not null
+     * - tableName and condition are non-empty strings
+     * 
+     * Postconditions:
+     * - Matching rows are deleted from the database
+     * 
+     * @return A message indicating whether the deletion was successful or not.
+     */
 	public static String delete(Connection conn, String tableName, String condition) {
 		if (condition == null || condition.trim().isEmpty()) {
 			return "Error: Delete condition cannot be empty.";
@@ -72,6 +113,25 @@ public class RecordManipulation {
         }
 	}
 
+	/**
+     * Updates existing records in a table that match a specified condition with new values.
+     * 
+     * @param conn       A valid database connection
+     * @param tableName  Name of the table to update
+     * @param updates    A map of column names to new values
+     * @param condition  SQL WHERE clause condition string (without "WHERE")
+     * 
+     * Preconditions:
+     * - conn is not null
+     * - tableName is a non-empty string
+     * - updates is not null or empty
+     * - condition is a non-empty string to prevent full table updates
+     * 
+     * Postconditions:
+     * - Matching rows are updated with the new values
+     * 
+     * @return A message indicating whether the update was successful or not.
+     */
 	public static String update(Connection conn, String tableName, Map<String, String> updates, String condition) {
 		if (updates == null || updates.isEmpty()) {
 			return "Error: No update clauses (column = value pairs) provided.";

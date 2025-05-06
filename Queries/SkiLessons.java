@@ -3,7 +3,36 @@ package Queries;
 import java.sql.*;
 import java.util.Scanner;
 
+/*
+* File: SkiLessons.java
+* 
+* This class contains a method which executes the following query:
+* 	QUERY:  For a given member, list all the ski lessons 
+*   they have purchased, including the number of remaining
+*   sessions, instructor name, and scheduled time .
+* 
+* USES: LESSON_LOG, LESSON, EMPLOYEE, PASS tables
+*/
+
 public class SkiLessons{
+
+	/**
+     * Purpose:
+     * Executes a parameterized SQL query 
+     *
+     * Preconditions:
+     * - A valid JDBC Connection object (conn) is established
+     * - A Scanner object (scanner) must be passed
+     * - The LESSON_LOG, LESSON, EMPLOYEE, and PASS tables must be populated and created.
+     *
+     * Postconditions:
+     * - Executes a SQL query with a user-supplied member ID.
+     * - Outputs the results to the console.
+     * - Displays a message if no records are found.
+     *
+     * @param conn    The active JDBC connection to the database.
+     * @param scanner A Scanner object for reading input from the user.
+    */
 	public static void skiLessons(Connection conn, Scanner scanner) {
 		System.out.print("Enter member ID: ");
 		int memID;
