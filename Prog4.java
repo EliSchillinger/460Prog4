@@ -2,10 +2,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 import java.sql.*;
 
-import Queries.IntermediateTrails;
-import Queries.RecordManipulation;
-import Queries.RidesAndRentals;
-import Queries.SkiLessons;
+import Queries.*;
 
 public class Prog4 {
 
@@ -79,6 +76,8 @@ public class Prog4 {
                 	RidesAndRentals.ridesAndRentals(conn, scanner);
                 } else if (command.equals("lessons")) {
                 	SkiLessons.skiLessons(conn, scanner);
+                } else if (command.equals("instructors")) {
+                	InstructorLessons.instructorLessons(conn, scanner);
                 } else {
                     System.out.println("Error: Invalid command. Please choose from Exit, or Lessons.");
                 }
