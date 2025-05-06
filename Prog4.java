@@ -6,7 +6,7 @@ import Queries.IntermediateTrails;
 import Queries.RecordManipulation;
 import Queries.RidesAndRentals;
 import Queries.SkiLessons;
-import Queries.InstructorLessons; // Added from Program 1 analysis
+import Queries.InstructorLessons;
 
 /*
 * File: Prog4.java
@@ -23,7 +23,6 @@ public class Prog4 {
 	private static String username = null;
 	private static String password = null;
 
-    // Definitions from Program 2
     private static final Set<String> VALID_TABLES = Set.of(
             "MEMBER", "EMPLOYEE", "LESSON", "PASS", "LESSON_LOG",
             "TRAIL", "LIFT", "LIFT_LOG", "INVENTORY", "RENTAL_LOG"
@@ -31,7 +30,6 @@ public class Prog4 {
 
     private static final Map<String, List<String>> TABLE_SCHEMAS = createSchemaMap();
 
-    // Method from Program 2
     private static Map<String, List<String>> createSchemaMap() {
         Map<String, List<String>> schemas = new HashMap<>();
         schemas.put("MEMBER", List.of("memID", "firstName", "lastName", "phone", "email", "emergencyContact"));
