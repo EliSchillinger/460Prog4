@@ -44,8 +44,8 @@ public class RecordManipulation {
 		    return "Error: Table name cannot be empty for insertion.";
 		}
 		if (conn == null) { // Check for null connection
-            return "Error: Database connection is null.";
-        }
+	            return "Error: Database connection is null.";
+	        }
 
 
 		String placeholders = String.join(", ", Collections.nCopies(attributes.size(), "?")); // Generate '?, ?, ...' for SQL
@@ -64,8 +64,8 @@ public class RecordManipulation {
 			return "Error inserting record into " + tableName + ": " + e.getMessage() +
 				   " (SQLState: " + e.getSQLState() + ", ErrorCode: " + e.getErrorCode() + ")";
 		} catch (Exception e) { // Handle other potential errors
-            return "Unexpected error during insert into " + tableName + ": " + e.getMessage();
-        }
+	            return "Unexpected error during insert into " + tableName + ": " + e.getMessage();
+	        }
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class RecordManipulation {
         if (tableName == null || tableName.trim().isEmpty()) { // Check for empty table name
             return "Error: Table name cannot be empty for deletion.";
         }
-		if (conn == null) { // Check for null connection
+	if (conn == null) { // Check for null connection
             return "Error: Database connection is null.";
         }
 
@@ -109,8 +109,8 @@ public class RecordManipulation {
 			return "Error deleting record(s) from " + tableName + ": " + e.getMessage() +
 				   " (SQLState: " + e.getSQLState() + ", ErrorCode: " + e.getErrorCode() + ")";
 		} catch (Exception e) { // Handle other potential errors
-            return "Unexpected error during delete from " + tableName + ": " + e.getMessage();
-        }
+	            return "Unexpected error during delete from " + tableName + ": " + e.getMessage();
+	        }
 	}
 
 	/**
@@ -139,12 +139,12 @@ public class RecordManipulation {
 		if (condition == null || condition.trim().isEmpty()) { // Check for empty condition
 			return "Error: Update condition cannot be empty to prevent accidental update of all data.";
 		}
-        if (tableName == null || tableName.trim().isEmpty()) { // Check for empty table name
-            return "Error: Table name cannot be empty for update.";
-        }
-		if (conn == null) { // Check for null connection
-            return "Error: Database connection is null.";
-        }
+	        if (tableName == null || tableName.trim().isEmpty()) { // Check for empty table name
+	            return "Error: Table name cannot be empty for update.";
+	        }
+			if (conn == null) { // Check for null connection
+	            return "Error: Database connection is null.";
+	        }
 
 		StringBuilder setClause = new StringBuilder(); // To build the "SET col1 = ?, col2 = ?" part
 		List<String> updateValues = new ArrayList<>(); // To store values for PreparedStatement
@@ -178,7 +178,7 @@ public class RecordManipulation {
 			return "Error updating record(s) in " + tableName + ": " + e.getMessage() +
 				   " (SQLState: " + e.getSQLState() + ", ErrorCode: " + e.getErrorCode() + ")";
 		} catch (Exception e) { // Handle other potential errors
-            return "Unexpected error during update of " + tableName + ": " + e.getMessage();
-        }
+	            return "Unexpected error during update of " + tableName + ": " + e.getMessage();
+	        }
 	}
 }
