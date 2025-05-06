@@ -33,18 +33,18 @@ INSERT INTO EMPLOYEE (empID, name, phone, salary) VALUES (111, 'Zack Zebra', '55
 COMMIT;
 
 -- TRAIL Data
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (201, 'Alpine', 'Bunny Hill', 'Base Area', 'Mid Station', 'Green', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (202, 'Alpine', 'Easy Street', 'Top of Chair 1', 'Base Area', 'Green', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (203, 'Alpine', 'Blue Ridge Run', 'Top of Chair 2', 'Mid Station', 'Blue', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (204, 'Alpine', 'Horizon', 'Summit', 'Base Area', 'Blue', 'Grooming');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (205, 'Alpine', 'Black Diamond', 'Summit', 'Mid Station', 'Black', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (206, 'Alpine', 'The Chute', 'Summit', 'Ridge Line', 'Black', 'Closed');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (207, 'Terrain Park', 'Jib Junction', 'Mid Station', 'Base Area', 'Blue', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (208, 'Alpine', 'Ridge Runner', 'Top of Chair 3', 'Base Area', 'Blue', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (209, 'Alpine', 'Powder Peak', 'Summit', 'Base Area', 'Double Black', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (210, 'Glades', 'Whispering Pines', 'Top of Chair 2', 'Mid Station', 'Black', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (211, 'Nordic', 'Meadow Loop', 'Nordic Center', 'Nordic Center', 'Green', 'Open');
-INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (212, 'Alpine', 'Snowflake Alley', 'Top of Chair 1', 'Base Area', 'Green', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (201, 'Alpine', 'Bunny Hill', 'Base Area', 'Mid Station', 'Beginner', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (202, 'Alpine', 'Easy Street', 'Top of Chair 1', 'Base Area', 'Beginner', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (203, 'Alpine', 'Blue Ridge Run', 'Top of Chair 2', 'Mid Station', 'Intermediate', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (204, 'Alpine', 'Horizon', 'Summit', 'Base Area', 'Intermediate', 'Closed');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (205, 'Alpine', 'Black Diamond', 'Summit', 'Mid Station', 'Expert', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (206, 'Alpine', 'The Chute', 'Summit', 'Ridge Line', 'Expert', 'Closed');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (207, 'Terrain Park', 'Jib Junction', 'Mid Station', 'Base Area', 'Intermediate', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (208, 'Alpine', 'Ridge Runner', 'Top of Chair 3', 'Base Area', 'Intermediate', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (209, 'Alpine', 'Powder Peak', 'Summit', 'Base Area', 'Expert', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (210, 'Glades', 'Whispering Pines', 'Top of Chair 2', 'Mid Station', 'Expert', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (211, 'Nordic', 'Meadow Loop', 'Nordic Center', 'Nordic Center', 'Beginner', 'Open');
+INSERT INTO TRAIL (trailID, category, name, "start", "end", "level", status) VALUES (212, 'Alpine', 'Snowflake Alley', 'Top of Chair 1', 'Base Area', 'Beginner', 'Open');
 COMMIT;
 
 -- LIFT Data
